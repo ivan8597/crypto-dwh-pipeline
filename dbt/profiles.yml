@@ -1,0 +1,12 @@
+crypto_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('PG_HOST', 'postgres') }}"
+      user: "{{ env_var('PG_USER', 'dwh') }}"
+      password: "{{ env_var('PG_PASSWORD', '') }}"
+      port: "{{ env_var('PG_PORT', '5432') | int }}"
+      dbname: "{{ env_var('PG_DB', 'analytics') }}"
+      schema: analytics
+      threads: 4

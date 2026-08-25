@@ -1,0 +1,10 @@
+name: crypto_analytics
+version: "1.0.0"
+profile: crypto_analytics
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  crypto_analytics:
+    staging: {+schema: staging, +materialized: view}
+    intermediate: {+schema: intermediate, +materialized: view}
+    marts: {+schema: marts, +materialized: table}
